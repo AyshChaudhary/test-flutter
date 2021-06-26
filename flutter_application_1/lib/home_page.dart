@@ -8,15 +8,15 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       
-      appBar: AppBar(        
-        title: Text("Good"),
+      appBar: AppBar(   
+        backgroundColor: Colors.purple,
+           title: Text("Test App"),
       ),
-     
+
       body:Center (
        child:Container(
         child: Text("Good $days Day"),
-      
-       )
+         )
     ,)
     );
   }
