@@ -7,14 +7,16 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.purple,
-          title: Text("Test App"),
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text("Test App"),
+      ),
+      body: Center(
+        child: Container(
+          child: Text("Good $days Day"),
         ),
-        body: Center(
-          child: Container(
-            child: Text("Good $days Day"),
-          ),
-        ));
+      ),
+      drawer: Drawer(),
+    );
   }
 }
