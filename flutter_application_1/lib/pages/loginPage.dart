@@ -6,8 +6,22 @@ class LOGINPAGE extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-    // r    child: Column(
-   //   children: [Image.asset("assets\images\login_image.png")],)
+      color: Colors.white,
+      child: Column(
+        children: [
+          Image.asset(
+            "assets/images/login_image.png",
+            fit: BoxFit.cover,
+          ),
+          Text(
+            "Welcome",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
