@@ -13,7 +13,13 @@ class Homepage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          child: Text("Good $days Day"),
+          child: Text(
+            "Good $days Day",
+            style: TextStyle(
+              color: Colors.purple,
+              fontSize: 20,
+            ),
+          ),
         ),
       ),
       drawer: Drawer(),
