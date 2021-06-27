@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
 class LOGINPAGE extends StatelessWidget {
-  const LOGINPAGE({ Key? key }) : super(key: key);
+  // const LOGINPAGE({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      child:Center(
-      child: Text("login page"),
-      ),
-    );
+        child: Column(
+      children: [
+        Image(
+          image: AssetImage('assets\login_image.png'),
+        )
+        //Image.asset(    "assets\login_image.png"   ),
+      ],
+    ));
   }
 }
