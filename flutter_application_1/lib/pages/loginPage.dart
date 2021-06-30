@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/Routes.dart';
 
 class LOGINPAGE extends StatelessWidget {
   const LOGINPAGE({Key? key}) : super(key: key);
@@ -42,13 +43,13 @@ class LOGINPAGE extends StatelessWidget {
                         hintText: "Enter Your Password", labelText: "Password"),
                   ),
                   SizedBox(
-                    height: 20.0,
+                    height: 40.0,
                   ),
                   ElevatedButton(
                     child: Text("Login"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                     onPressed: () {
-                      print("Hey Ayush");
+                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
                     },
                   ),
                 ],
