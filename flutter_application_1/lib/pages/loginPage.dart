@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/Routes.dart';
 
-class LOGINPAGE extends StatelessWidget {
-  const LOGINPAGE({Key? key}) : super(key: key);
+class LOGINPAGE extends StatefulWidget {
+  @override
+  _LOGINPAGEState createState() => _LOGINPAGEState();
+}
 
+bool changeButton = false;
+
+class _LOGINPAGEState extends State<LOGINPAGE> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -46,21 +51,41 @@ class LOGINPAGE extends StatelessWidget {
                     height: 40.0,
                   ),
 
-                  Container(
-                    width: 150,
-                    height: 50,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        color: Colors.white,
+                  InkWell(
+                    onTap: () async {
+                      setState(() {
+                        changeButton = true;
+                      });
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(
+                        seconds: 1,
                       ),
-                    ),
+                      width: changeButton ? 50 : 150,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: changeButton
+                          ? Icon(
+                              Icons.done,
+                              color: Colors.white,
+                            )
+                          : Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
 
-                    //  color: Colors.white,
-                    decoration: BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.circular(10),
+                      //  color: Colors.white,
+                      decoration: BoxDecoration(
+                        shape:
+                            changeButton ? BoxShape.circle : BoxShape.rectangle,
+                        color: Colors.deepPurple,
+                        // borderRadius:
+                        //  BorderRadius.circular(changeButton ? 20 : 10),
+                      ),
                     ),
                   ),
 
