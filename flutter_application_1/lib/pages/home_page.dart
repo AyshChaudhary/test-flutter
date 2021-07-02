@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class Homepage extends StatelessWidget {
   final int days = 30;
   const Homepage({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.deepPurple,
         title: Text("Test App"),
       ),
       body: Center(
@@ -17,7 +16,7 @@ class Homepage extends StatelessWidget {
           child: Text(
             "Good $days Day",
             style: TextStyle(
-              color: Colors.purple,
+              color: Colors.deepPurple,
               fontSize: 20,
             ),
           ),
