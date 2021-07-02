@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/Routes.dart';
 
 class LOGINPAGE extends StatefulWidget {
   @override
@@ -51,12 +52,12 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
                   ),
 
                   InkWell(
-                    onTap: () {
+                    onTap: () async {
                       setState(() {
                         changeButton = true;
                       });
-
-                      // Navigator.pushNamed(context, MyRoutes.homeRoutes);
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
                     },
                     child: AnimatedContainer(
                       duration: Duration(
@@ -65,20 +66,25 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
                       width: changeButton ? 50 : 150,
                       height: 50,
                       alignment: Alignment.center,
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
-                      ),
+                      child: changeButton
+                          ? Icon(
+                              Icons.done,
+                              color: Colors.white,
+                            )
+                          : Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
 
                       //  color: Colors.white,
                       decoration: BoxDecoration(
                         shape:
                             changeButton ? BoxShape.circle : BoxShape.rectangle,
                         color: Colors.deepPurple,
-                        borderRadius:
-                            BorderRadius.circular(changeButton ? 20 : 10),
+                        // borderRadius:
+                        //  BorderRadius.circular(changeButton ? 20 : 10),
                       ),
                     ),
                   ),
