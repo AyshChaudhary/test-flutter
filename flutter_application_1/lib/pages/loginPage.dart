@@ -41,11 +41,25 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
                   TextFormField(
                     decoration: InputDecoration(
                         hintText: "Enter Your Username", labelText: "Username"),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Username can not be Empty";
+                      }
+                      return null;
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
                         hintText: "Enter Your Password", labelText: "Password"),
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Password can not be empty";
+                      } else if (value.length > 6) {
+                        return "Password shoud be at lest 6 words";
+                      }
+                      return null;
+                    },
                   ),
                   SizedBox(
                     height: 40.0,
