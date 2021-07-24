@@ -16,6 +16,19 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
       child: SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.notifications),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.extension),
+                  onPressed: () {},
+                ),
+              ],
+            ),
             Image.asset(
               "assets/images/login_image.png",
               fit: BoxFit.cover,
@@ -42,7 +55,7 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
                     decoration: InputDecoration(
                         hintText: "Enter Your Username", labelText: "Username"),
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value!.isEmpty) {
                         return "Username can not be Empty";
                       }
                       return null;
@@ -53,7 +66,7 @@ class _LOGINPAGEState extends State<LOGINPAGE> {
                     decoration: InputDecoration(
                         hintText: "Enter Your Password", labelText: "Password"),
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value!.isEmpty) {
                         return "Password can not be empty";
                       } else if (value.length > 6) {
                         return "Password shoud be at lest 6 words";
