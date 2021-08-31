@@ -9,7 +9,7 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: Text("Test App"),
+        title: Text("Flutter Test App"),
       ),
       body: Center(
         child: Container(
